@@ -1,0 +1,89 @@
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 4
+final_space: true
+terminal_background: '#241f31'
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: root
+        style: plain
+        foreground: p:amber
+        template: ' '
+      - type: os
+        style: powerline
+        foreground: p:text
+        background: p:deep
+        template: '{{ .Icon }} '
+        powerline_symbol: 
+        leading_powerline_symbol: 
+      - type: session
+        style: powerline
+        foreground: p:text
+        background: p:mid
+        template: ' {{ .UserName }}@{{ .HostName }} '
+        powerline_symbol: 
+      - type: path
+        style: powerline
+        foreground: p:deep
+        background: p:mauve
+        template: ' {{ .Path }} '
+        powerline_symbol: 
+        options:
+          folder_icon: …
+          home_icon: '~'
+          style: agnoster_short
+      - type: docker
+        style: diamond
+        foreground: p:ink
+        background: p:teal
+        template:  {{ .Context }}
+        leading_diamond: ' '
+        trailing_diamond: 
+        cache:
+          duration: 30s
+          strategy: session
+      - type: git
+        style: diamond
+        foreground: p:ink
+        background: p:lavender
+        background_templates:
+          - '{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}'
+          - '{{ if gt .Ahead 0 }}p:green{{ end }}'
+          - '{{ if gt .Behind 0 }}p:peach{{ end }}'
+        template: >-
+          {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} ✱{{ end }}{{ if gt .Ahead 0 }} ↑{{ .Ahead }}{{
+          end }}{{ if gt .Behind 0 }} ↓{{ .Behind }}{{ end }}
+        leading_diamond: ' '
+        trailing_diamond: 
+        options:
+          fetch_status: true
+          branch_icon: ' '
+      - type: python
+        style: diamond
+        foreground: p:ink
+        background: p:blue
+        template:  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}
+        leading_diamond: ' '
+        trailing_diamond: 
+        cache:
+          duration: 168h
+          strategy: folder
+      - type: text
+        style: plain
+        foreground: p:text
+        template: ' ❯'
+palette:
+  deep: '#5b3a86'
+  mid: '#7a56ad'
+  text: '#f3eefc'
+  ink: '#241f31'
+  mauve: '#cba6f7'
+  lavender: '#b4befe'
+  pink: '#f5c2e7'
+  blue: '#89b4fa'
+  teal: '#94e2d5'
+  amber: '#e5a50a'
+  yellow: '#f9e2af'
+  green: '#a6e3a1'
+  peach: '#fab387'
