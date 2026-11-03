@@ -2,7 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 4,
   "final_space": true,
-  "terminal_background": "#241f31",
   "blocks": [
     {
       "type": "prompt",
@@ -11,44 +10,44 @@
         {
           "type": "root",
           "style": "plain",
-          "foreground": "p:amber",
+          "foreground": "p:warn",
           "template": "\uf0e7 "
         },
         {
           "type": "os",
           "style": "powerline",
-          "foreground": "p:text",
-          "background": "p:deep",
-          "template": "{{ .Icon }} ",
+          "foreground": "p:ink",
+          "background": "p:os",
+          "template": " {{ .Icon }} ",
           "powerline_symbol": "\ue0b0",
           "leading_powerline_symbol": "\ue0b6"
         },
         {
           "type": "session",
           "style": "powerline",
-          "foreground": "p:text",
-          "background": "p:mid",
+          "foreground": "p:ink",
+          "background": "p:session",
           "template": " {{ .UserName }}@{{ .HostName }} ",
           "powerline_symbol": "\ue0b0"
         },
         {
           "type": "path",
           "style": "powerline",
-          "foreground": "p:deep",
-          "background": "p:mauve",
+          "foreground": "p:ink",
+          "background": "p:path",
           "template": " {{ .Path }} ",
           "powerline_symbol": "\ue0b0",
           "options": {
-            "folder_icon": "\u2026",
             "home_icon": "~",
-            "style": "agnoster_full"
+            "style": "agnoster_full",
+            "folder_separator_icon": " \ue0b1 "
           }
         },
         {
           "type": "docker",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:teal",
+          "background": "p:docker",
           "template": "\uf308 {{ .Context }}",
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
@@ -61,11 +60,11 @@
           "type": "git",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:lavender",
+          "background": "p:git",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
-            "{{ if gt .Ahead 0 }}p:green{{ end }}",
-            "{{ if gt .Behind 0 }}p:peach{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warn{{ end }}",
+            "{{ if gt .Ahead 0 }}p:good{{ end }}",
+            "{{ if gt .Behind 0 }}p:bad{{ end }}"
           ],
           "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} \u2731{{ end }}{{ if gt .Ahead 0 }} \u2191{{ .Ahead }}{{ end }}{{ if gt .Behind 0 }} \u2193{{ .Behind }}{{ end }}",
           "leading_diamond": " \ue0b6",
@@ -79,7 +78,7 @@
           "type": "python",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:blue",
+          "background": "p:python",
           "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
@@ -91,25 +90,22 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "p:text",
+          "foreground": "default",
           "template": " \u276f"
         }
       ]
     }
   ],
   "palette": {
-    "deep": "#5b3a86",
-    "mid": "#7a56ad",
-    "text": "#f3eefc",
-    "ink": "#241f31",
-    "mauve": "#cba6f7",
-    "lavender": "#b4befe",
-    "pink": "#f5c2e7",
-    "blue": "#89b4fa",
-    "teal": "#94e2d5",
-    "amber": "#e5a50a",
-    "yellow": "#f9e2af",
-    "green": "#a6e3a1",
-    "peach": "#fab387"
+    "ink": "black",
+    "os": "magenta",
+    "session": "lightMagenta",
+    "path": "lightBlue",
+    "docker": "cyan",
+    "git": "lightMagenta",
+    "python": "blue",
+    "warn": "yellow",
+    "good": "lightGreen",
+    "bad": "lightRed"
   }
 }
