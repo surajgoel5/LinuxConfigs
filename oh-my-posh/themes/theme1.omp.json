@@ -92,7 +92,7 @@
     }
   ],
    "palette": {
-    "root_icon": "red",
+    "root_icon": "yellow",
 
     "os_fg": "lightWhite",
     "os_bg": "black",
