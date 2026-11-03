@@ -101,8 +101,8 @@
     "os_fg": "lightWhite",
     "os_bg": "black",
 
-    "session_fg": "black",
-    "session_bg": "lightBlue",
+    "session_fg": "white",
+    "session_bg": "blue",
 
     "path_fg": "black",
     "path_bg": "lightGreen",
@@ -117,7 +117,7 @@
     "git_behind": "lightRed",
 
     "python_fg": "black",
-    "python_bg": "blue",
+    "python_bg": "lightBlue",
 
     "prompt_char": "white"
   }
