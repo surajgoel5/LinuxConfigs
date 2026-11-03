@@ -101,7 +101,7 @@
     "os_fg": "lightWhite",
     "os_bg": "black",
 
-    "session_fg": "white",
+    "session_fg": "lightWhite",
     "session_bg": "blue",
 
     "path_fg": "black",
