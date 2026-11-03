@@ -10,15 +10,15 @@
         {
           "type": "root",
           "style": "plain",
-          "foreground": "p:warn",
+          "foreground": "p:orange",
           "template": "\uf0e7 "
         },
         {
           "type": "os",
           "style": "powerline",
           "foreground": "p:ink",
-          "background": "p:os",
-          "template": " {{ .Icon }} ",
+          "background": "p:white",
+          "template": "{{ .Icon }} ",
           "powerline_symbol": "\ue0b0",
           "leading_powerline_symbol": "\ue0b6"
         },
@@ -26,7 +26,7 @@
           "type": "session",
           "style": "powerline",
           "foreground": "p:ink",
-          "background": "p:session",
+          "background": "p:purple",
           "template": " {{ .UserName }}@{{ .HostName }} ",
           "powerline_symbol": "\ue0b0"
         },
@@ -34,20 +34,19 @@
           "type": "path",
           "style": "powerline",
           "foreground": "p:ink",
-          "background": "p:path",
+          "background": "p:blue",
           "template": " {{ .Path }} ",
           "powerline_symbol": "\ue0b0",
           "options": {
             "home_icon": "~",
-            "style": "agnoster_full",
-            "folder_separator_icon": " \ue0b1 "
+            "style": "full"
           }
         },
         {
           "type": "docker",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:docker",
+          "background": "p:cyan",
           "template": "\uf308 {{ .Context }}",
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
@@ -60,11 +59,11 @@
           "type": "git",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:git",
+          "background": "p:teal",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warn{{ end }}",
-            "{{ if gt .Ahead 0 }}p:good{{ end }}",
-            "{{ if gt .Behind 0 }}p:bad{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if gt .Ahead 0 }}p:green{{ end }}",
+            "{{ if gt .Behind 0 }}p:orange{{ end }}"
           ],
           "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} \u2731{{ end }}{{ if gt .Ahead 0 }} \u2191{{ .Ahead }}{{ end }}{{ if gt .Behind 0 }} \u2193{{ .Behind }}{{ end }}",
           "leading_diamond": " \ue0b6",
@@ -78,7 +77,7 @@
           "type": "python",
           "style": "diamond",
           "foreground": "p:ink",
-          "background": "p:python",
+          "background": "p:pink",
           "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "leading_diamond": " \ue0b6",
           "trailing_diamond": "\ue0b4",
@@ -90,22 +89,22 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "default",
+          "foreground": "p:white",
           "template": " \u276f"
         }
       ]
     }
   ],
   "palette": {
-    "ink": "black",
-    "os": "magenta",
-    "session": "lightMagenta",
-    "path": "lightBlue",
-    "docker": "cyan",
-    "git": "lightMagenta",
-    "python": "blue",
-    "warn": "yellow",
-    "good": "lightGreen",
-    "bad": "lightRed"
+    "ink": "#1a1b26",
+    "white": "#f2f4ff",
+    "purple": "#bb9af7",
+    "blue": "#7aa2f7",
+    "cyan": "#7dcfff",
+    "teal": "#73daca",
+    "pink": "#f5c2e7",
+    "green": "#9ece6a",
+    "yellow": "#e0af68",
+    "orange": "#ff9e64"
   }
 }
