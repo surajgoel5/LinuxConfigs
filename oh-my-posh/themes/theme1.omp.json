@@ -80,11 +80,7 @@
           "background": "p:python_bg",
           "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
           "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
-          "cache": {
-            "duration": "168h",
-            "strategy": "folder"
-          }
+          "trailing_diamond": "\ue0b4"
         },
         {
           "type": "text",
